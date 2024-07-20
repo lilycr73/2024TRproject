@@ -2,16 +2,16 @@ body
 {
         background-color:gray;
         margin:0%; 
-        overflow：hidden；
+        overflow:hidden;
 }
 
 #myCanvas
 {
-        background-color：black；
-        width：100%;
+        background-color:black;
+        width:100%;
         height:100%;
         position:fixed;
-}
+};
 
 #myText{
         position:fixed;
@@ -19,10 +19,10 @@ body
         color:yellow;
         font-size:x-large;
         /*font-family:Arial, Helvetica, sans-serif;*/
-}
+};
 
 #myButton{
         position:fixed;
         bottom:10%;
 
-}
+};
