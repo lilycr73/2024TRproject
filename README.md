@@ -8,4 +8,4 @@ this is  first gray demo program referring Erich's joy of ray tracing.
 <br>
 *[styled canvas]<https://github.com/lilycr73/2024TRproject/styledcanvas-el.html> use CSS to make canvas full screen
 <br>
-*[interactivePage]<https://github.com/lilycr73/2024TRproject/interactivePage-e3.html>
+*[interactivePage]<https://github.com/lilycr73/2024TRproject/interactivePage-e3.html> use addEventLisentners to make page interactive
