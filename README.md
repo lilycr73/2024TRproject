@@ -10,7 +10,7 @@ this is  first gray demo program referring Erich's joy of ray tracing.
 
 *[interactivePage](https://lilycr73.github.io/2024TRproject/interactivePage-e3.html)use addEventLisentner to make interactive
 
-*[simpleButton](https://lilycr73.github.io/2024TRproject/simpleButton-e4.html) push button to Randomize Rectangle Size
+*[simpleButton and randomizeRectSize](https://lilycr73.github.io/2024TRproject/simpleButton-e4.html) push button to Randomize Rectangle Size
 
-*[randomSize and Color](https://lilycr73.github.io/2024TRproject/randomColor-e5.html) push button to Randomize Rectangle Size
+*[randomizeRectColor](https://lilycr73.github.io/2024TRproject/randomColor-e5.html) push button to Randomize Rectangle Size
 
