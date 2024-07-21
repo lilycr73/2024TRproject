@@ -12,5 +12,5 @@ this is  first gray demo program referring Erich's joy of ray tracing.
 
 *[simpleButton](https://lilycr73.github.io/2024TRproject/simpleButton-e4.html) push button to Randomize Rectangle Size
 
-*[simpleButton](https://lilycr73.github.io/2024TRproject/randomColor-e5.html) push button to Randomize Rectangle Size
+*[randomSize and Color](https://lilycr73.github.io/2024TRproject/randomColor-e5.html) push button to Randomize Rectangle Size
 
