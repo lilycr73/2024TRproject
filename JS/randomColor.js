@@ -15,7 +15,6 @@ function handleWindowResize()
         draw();
 };
 
-//文本添加事件监听，鼠标按下，鼠标弹起，显示不同文本
 let text=document.getElementById("myText");
 window.addEventListener("mousedown",handleMouseDown);
 function handleMouseDown(){
@@ -27,37 +26,47 @@ function handleMouseUp(){
 };
 
 
-
-
 let halfCanvasW=canvas.width/2;
-let halfCanvasH=canvas.height/2;        
+let halfCanvasH=canvas.height/2;
+        
         
 let rectW=40;
 let rectH=20;
         
 let halfRectW=rectW/2;
 let halfRectH=rectH/2;
-        
+
+let  colorString="rgb(255,255,255)";
+function randomizeColorString()
+{//create a new string with the fom "rgb(255,255,255)"
+    let r=Math.floor(Math.random()*256);
+    let g=Math.floor(Math.random()*256);
+    let b=Math.floor(Math.random()*256);    
+    colorString="rgb("+r+","+g+","+b+")";
+}
+
 function draw()
 {
         
-        context.fillStyle="magenta";
+        randomizeColorString();
+        context.fillStyle=colorString;
         context.fillRect(halfCanvasW-halfRectW,halfCanvasH-halfRectH,rectW,rectH); 
         
-        context.fillStyle="red";
+        context.fillStyle=colorString;
         context.fillRect(0,0,rectW,rectH);
         
         
-        context.fillStyle="white";
+        context.fillStyle=colorString;
         context.fillRect(canvas.width-rectW,0,rectW,rectH);
         
-        context.fillStyle="blue";
+        context.fillStyle=colorString;
         context.fillRect(0,canvas.height-rectH,rectW,rectH);
         
-        context.fillStyle="green";
+        context.fillStyle=colorString;
         context.fillRect(canvas.width-rectW,canvas.height-rectH,rectW,rectH);
       
         
 }
+
 
 draw();
