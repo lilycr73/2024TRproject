@@ -14,3 +14,5 @@ this is  first gray demo program referring Erich's joy of ray tracing.
 
 *[randomizeRectColor](https://lilycr73.github.io/2024TRproject/randomColor-e5.html) push button to Randomize Rectangle Size
 
+*[Pixel Loop](https://lilycr73.github.io/2024TRproject/pixelLoop.html) Loops over each and every pixel on the screen and sets that pixel to a unique rgb color
+
