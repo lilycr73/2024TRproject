@@ -1,3 +1,5 @@
+/*注意}后不能跟；号，会导致文本和按钮显示不出来，被画布遮挡，它们都在body里*/
+/*CSS选择器问题：确保你的CSS选择器正确匹配了HTML元素。注意CSS选择器的语法，不要在选择器末尾加上分号，这会导致选择器无效。*/
 body
 {
         background-color:gray;
@@ -8,22 +10,22 @@ body
 #myCanvas
 {
         background-color:black;
-        top:0%;
         width:100%;
         height:100%;
         position:fixed;
-};
+}
 
 #myText{
         top:10%;
         color:yellow;
         position:fixed;
         font-size:x-large;
-        z-index: 10; /*保证文本显示在画布前面，不被遮挡！      
+        z-index: 10; /*保证文本显示在画布前面，不被遮挡
         /*font-family:Arial, Helvetica, sans-serif;*/
-};
+}
 
 #myButton{
         bottom:10%;
         position:fixed;
-};
+}
+
