@@ -16,3 +16,6 @@ this is  first gray demo program referring Erich's joy of ray tracing.
 
 *[Pixel Loop](https://lilycr73.github.io/2024TRproject/pixelLoop.html) Loops over each and every pixel on the screen and sets that pixel to a unique rgb color
 
+*[ray Direction Visualizer](https://lilycr73.github.io/2024TRproject/rayDirection.html) User new Vector3 library,assigns a unique ray direction vector to each pixel.The rgb colors represent the ray direction Vector components(red=x,green=y,blue=z) of each pixel
+
+*[intersectPlane](https://lilycr73.github.io/2024TRproject/intersectPlane.html) Ray intersect Plne, buleSky and green ground(plane) with fog color

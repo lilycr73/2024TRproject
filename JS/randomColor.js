@@ -64,23 +64,23 @@ function draw()
         //清除原来画布上的图形
         context.clearRect(0,0,canvas.width,canvas.height);
 
-        randomizeColorString();//产生随机色
+        randomizeColorString();
         context.fillStyle=colorString;
         context.fillRect(halfCanvasW-halfRectW,halfCanvasH-halfRectH,rectW,rectH); 
         
-        randomizeColorString();//产生随机色
+        randomizeColorString();
         context.fillStyle=colorString;
         context.fillRect(0,0,rectW,rectH);
         
-        randomizeColorString();//产生随机色
+        randomizeColorString();
         context.fillStyle=colorString;
         context.fillRect(canvas.width-rectW,0,rectW,rectH);
         
-        randomizeColorString();//产生随机色
+        randomizeColorString();
         context.fillStyle=colorString;
         context.fillRect(0,canvas.height-rectH,rectW,rectH);
         
-        randomizeColorString();//产生随机色
+        randomizeColorString();
         context.fillStyle=colorString;
         context.fillRect(canvas.width-rectW,canvas.height-rectH,rectW,rectH);
       
