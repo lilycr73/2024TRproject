@@ -132,4 +132,51 @@ function intersectPlane(planeOrigin, planeNormal, rayOrigin, rayDirection)
 		return Infinity;//原来没else,显示不正确！？
 	//}
 
+};
+
+let t0=0;
+let t1=0;
+let discriminant =0;//判别式
+let oneOver_2a=0;  //1/2a,为了计算快些
+function solveQuadratic(a,b,c)
+{
+	discriminant=(b*b)-(4*a*c);
+	if(discriminant<0){
+		return false; //无解
+	}
+	discriminant=Math.sqrt(discriminant);
+	oneOver_2a=1/(2*a);
+	t0=(-b-discriminant)*oneOver_2a;
+	t1=(-b+discriminant)*oneOver_2a;
+	return true;    //有解
+};
+
+let L=new Vector3();
+let a,b,c=0;
+
+function intersectSphere(spherePosition,sphereRadius,rayOrigin,rayDirection)
+{
+	L.copy(rayOrigin);
+	L.subtract(spherePosition);
+	a=rayDirection.dot(rayDirection);
+	b=2*L.dot(rayDirection);
+	c=L.dot(L)-(sphereRadius*sphereRadius)
+	if(solveQuadratic(a,b,c)==false)
+	{
+		return Infinity;
+	}
+	else
+	{
+		if(t0>0) 
+		{
+			return t0; //看见圆外面
+		}
+		else if(t1>0) 
+			{
+				return t1; //看见圆内面
+			}	
+			else{
+				return Infinity; //圆在视点后面			}
+			}
+	}
 }
