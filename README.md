@@ -21,3 +21,5 @@ this is  first gray demo program referring Erich's joy of ray tracing.
 *[intersectPlane](https://lilycr73.github.io/2024TRproject/intersectPlane.html) Ray intersect  buleSky and green ground(plane) with fog color
 
 *[intersectSphere&Plane](https://lilycr73.github.io/2024TRproject/intersectSphere.html) Ray intersect gray Plane and red sphere
+
+*[diffuse&ambient shading](https://lilycr73.github.io/2024TRproject/diffuseLighting.html) Ray intersect gray Plane and red Sphere, compute  diffuse color and ambient color with a Parrel Directional Light Source

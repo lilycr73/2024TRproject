@@ -1,6 +1,6 @@
 //定义自己的向量vector3
 //let myVector=new Vector3(1,2,3);//构造函数，可设置初始值
-//若要赋予向量功能，就是加在它的原型上
+//若要赋予向量功能，就是加在它的原型上，继承定义
 
 function Vector3(x = 0, y = 0, z = 0)
 {
@@ -39,6 +39,15 @@ Vector3.prototype.subtract = function(otherVector)
 	this.x -= otherVector.x;
 	this.y -= otherVector.y;
 	this.z -= otherVector.z;
+	return this;
+};
+
+
+Vector3.prototype.multiplyColor = function(otherColorVector)
+{
+	this.x *= otherColorVector.x;
+	this.y *= otherColorVector.y;
+	this.z *= otherColorVector.z;
 	return this;
 };
 
@@ -88,9 +97,8 @@ Vector3.prototype.dot = function(otherVector)
 	return (this.x * otherVector.x) + (this.y * otherVector.y) + (this.z * otherVector.z);
 };
 
-
 Vector3.prototype.mix = function(vectorA, vectorB, t)
-{
+{ // C=Ca+(Cb-Ca)*t= Ca*(1-t)+Cb*t;
 	t = Math.min(t, 1); //make sure 《t《1
 	t = Math.max(t, 0);//make sure  0《t
 	this.x = vectorA.x + (vectorB.x - vectorA.x) * t;
@@ -99,24 +107,34 @@ Vector3.prototype.mix = function(vectorA, vectorB, t)
 	return this;
 };
 
+//添加求射线上某点值，根据P(t)=O+t*D
+Vector3.prototype.getPointAlongRay = function(rayOrigin,rayDirection,t)
+{
+	this.x= rayOrigin.x+(t * rayDirection.x);
+	this.y= rayOrigin.y+(t * rayDirection.y);
+	this.z= rayOrigin.z+(t * rayDirection.z);
+	return this;
+};
 
-/*以下知识函数，光线和平面的求交函数，返回交点的t值，无穷大Infinity则无交点
+
+/*=======================================================================
+以下定义函数，光线和平面的求交函数，返回交点的t值，无穷大Infinity则无交点
      t=dot((P0-O0) ,N)/ (D,)
+==========================================================================*/
 
-*/
-let planeO_rayO_vec = new Vector3();
-let rayD_dot_planeN = 0;
-let result = 0;
 
 function intersectPlane(planeOrigin, planeNormal, rayOrigin, rayDirection)
 {   //t= ((P0-O) •N) / (D • N)  需要检验 t>0 才会有交点
 	//rayD_dot_planeN is (D • N),planeO_rayO_vec is (P0-O), planeNormal is N
+	let planeO_rayO_vec = new Vector3();
+	let rayD_dot_planeN = 0;
+	let result = 0;
 	rayD_dot_planeN = rayDirection.dot(planeNormal);
 
 	//因为当光线和面外法向量同向则点乘>=0，实际眼睛看到的是平面的背面，所以不应该算作能看到的交点！
 
 	if (rayD_dot_planeN >= 0)  
-			{
+	{
 		return Infinity;
 	}
 
@@ -134,12 +152,16 @@ function intersectPlane(planeOrigin, planeNormal, rayOrigin, rayDirection)
 
 };
 
-let t0=0;
-let t1=0;
-let discriminant =0;//判别式
-let oneOver_2a=0;  //1/2a,为了计算快些
+/*=============================================================
+        添加射线和球求交的计算函数
+	======================================================== */
+	let t0=0;
+    let t1=0;
+
 function solveQuadratic(a,b,c)
 {
+	let discriminant =0;//判别式
+	let oneOver_2a=0;  //1/2a,为了计算快些
 	discriminant=(b*b)-(4*a*c);
 	if(discriminant<0){
 		return false; //无解
@@ -151,11 +173,13 @@ function solveQuadratic(a,b,c)
 	return true;    //有解
 };
 
-let L=new Vector3();
-let a,b,c=0;
+
 
 function intersectSphere(spherePosition,sphereRadius,rayOrigin,rayDirection)
 {
+
+	let L=new Vector3();
+	let a,b,c=0;
 	L.copy(rayOrigin);
 	L.subtract(spherePosition);
 	a=rayDirection.dot(rayDirection);
@@ -180,3 +204,4 @@ function intersectSphere(spherePosition,sphereRadius,rayOrigin,rayDirection)
 			}
 	}
 }
+
